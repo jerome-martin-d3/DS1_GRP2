@@ -5,6 +5,7 @@ function getPage($db){
 $lesPages['accueil'] = "actionAccueil";
 $lesPages['mentions'] = "actionMentions";
 $lesPages['maintenance'] = "actionMaintenance";
+$lesPages['ajoutUtil'] = "actionAjoutUtil";
 
 if ($db!=null){
   if(isset($_GET['page'])){
