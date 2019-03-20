@@ -10,7 +10,7 @@ function actionAjoutUtil($twig, $db){
         $ville = $_POST['ville'];
         $cp = $_POST['cp'];
         
-        $util->insert(array($nom, $prenom, $adresse, $cp, $ville));
+        $util->insert($nom, $prenom, $adresse, $cp, $ville);
       
     }
     echo $twig->render('ajout-util.html.twig', array());
