@@ -2,7 +2,7 @@
 
 function actionAjoutActu($twig, $db){
     $util = new Utilisateur($db);
-    $utilisateurs = $util->selectByID();
+    $utilisateurs = $util->selectOrderID();
     if (isset($_POST['btAjoutActu'])){
         $actu = new Actu($db);
         
