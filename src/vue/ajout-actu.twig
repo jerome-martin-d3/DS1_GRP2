@@ -1,0 +1,20 @@
+{% extends "base.html.twig" %}
+
+{% block title %} {{ parent() }} Ajouter une atualité {% endblock %}
+       
+{% block contenu %} <h1> Aouter une atualité </h1> 
+<div class="panel-body">
+    <form class="form-signin" action="index.php?page=ajoutActu" method="POST">
+        <select class="form-control" name="idUtil">
+            <option value="">Choisir un auteur</option>
+            {% for u in utilisateurs %}
+                <option value="{{ u.id }}">{{ u.nom }} {{ u.prenom }}</option>
+            {% endfor %}
+        </select>
+        <input type="text" name="titre" placeholder="Saisir un titre" class="form-control" /><br />
+        <textarea class="form-control" name="contenu" placeholder="Saisir un contenu" rows="5"></textarea>
+        <input class="btn btn-lg btn-primary btn-block" type="submit" name="btAjoutUtil" value="Créer un utilisateur" />
+    </form>
+</div>
+
+{% endblock %} 

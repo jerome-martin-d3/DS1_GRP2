@@ -2,8 +2,11 @@
 
 function actionAccueil($twig, $db){
     $util = new Utilisateur($db);
-    $liste = $util->select();
-    echo $twig->render('index.html.twig', array('liste'=>$liste));
+    $utilisateurs = $util->select();
+    $actu = new Actu($db);
+    $actualites = $actu->select();
+    $auteur = $util->selectByID();
+    echo $twig->render('index.html.twig', array('utilisateurs'=>$utilisateurs, 'actu'=>$actualites, 'auteur'=>$auteur));
 }
 
 function actionConnexion($twig){

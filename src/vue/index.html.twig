@@ -4,15 +4,32 @@
        
 {% block contenu %} <h1> Tronche Book </h1> 
     <a href="index.php?page=ajoutUtil">Ajouter un utilisateur</a>
+    <h3>Liste des utilisateurs</h3>
     <div class="table-responsive">
     <table class="table table-hover table-striped">
         <th>Nom</th>
         <th>Prénom</th>
-    {% for util in liste %}
+    {% for util in utilisateurs %}
         <tr>
             <td>{{ util.nom }} </td>
             <td> {{ util.prenom }}</td>
         </tr>
+    {% endfor %}
+    </table>
+    </div>
+    <a href="index.php?page=ajoutActu">Ajouter une actualité</a>
+    <h3>Actualités </h3>
+    <div class="table-responsive">
+    <table class="table table-hover table-striped">
+        <th>Titre</th>
+        <th>Contenu</th>
+        <th>Auteur</th>
+    {% for actu in actu %}
+    <tr>
+        <td>{{ actu.titre }}</td>
+        <td>{{ actu.contenu }}</td>
+        <td>{{ auteur.nom }} {{auteur.prenom}}</td>
+    </tr>
     {% endfor %}
     </table>
     </div>
