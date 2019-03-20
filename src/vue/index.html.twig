@@ -4,5 +4,14 @@
        
 {% block contenu %} <h1> Tronche Book </h1> 
     <a href="index.php?page=ajoutUtil">Ajouter un utilisateur</a>
-
+    <table>
+        <th>Nom</th>
+        <th>Prénom</th>
+    {% for util in liste %}
+        <tr>
+            <td>{{ util.nom }} </td>
+            <td> {{ util.prenom }}</td>
+        </tr>
+    {% endfor %}
+    </table>
 {% endblock %} 

@@ -1,7 +1,9 @@
 <?php
 
-function actionAccueil($twig){
-    echo $twig->render('index.html.twig', array());
+function actionAccueil($twig, $db){
+    $util = new Utilisateur($db);
+    $liste = $util->select();
+    echo $twig->render('index.html.twig', array('liste'=>$liste));
 }
 
 function actionConnexion($twig){
