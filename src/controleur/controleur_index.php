@@ -1,7 +1,12 @@
 <?php
 
-function actionAccueil($twig){
-    echo $twig->render('index.html.twig', array());
+function actionAccueil($twig, $db){
+    $util = new Utilisateur($db);
+    $utilisateurs = $util->select();
+    $actu = new Actu($db);
+    $actualites = $actu->select();
+    $auteur = $util->selectByID();
+    echo $twig->render('index.html.twig', array('utilisateurs'=>$utilisateurs, 'actu'=>$actualites, 'auteur'=>$auteur));
 }
 
 function actionConnexion($twig){

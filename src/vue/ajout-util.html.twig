@@ -3,14 +3,15 @@
 {% block title %} {{ parent() }} Ajouter un utilisateur {% endblock %}
        
 {% block contenu %} <h1> Aouter un utilisateur </h1> 
-
-    <form action="index.php?page=ajoutUtil" method="POST">
+<div class="panel-body">
+    <form class="form-signin" action="index.php?page=ajoutUtil" method="POST">
         <input type="text" name="prenom" placeholder="Saisir un prénom" class="form-control" /><br />
         <input type="text" name="nom" placeholder="Saisir un nom" class="form-control" /><br />
         <input type="text" name="adresse" placeholder="Saisir une adresse" class="form-control" /><br />
         <input type="text" name="ville" placeholder="Saisir une ville" class="form-control" /><br />
         <input type="number" name="cp" placeholder="CP" class="form-control" /><br />
-        <input type="submit" name="btAjoutUtil" value="Créer un utilisateur" />
+        <input class="btn btn-lg btn-primary btn-block" type="submit" name="btAjoutUtil" value="Créer un utilisateur" />
     </form>
+</div>
 
 {% endblock %} 
